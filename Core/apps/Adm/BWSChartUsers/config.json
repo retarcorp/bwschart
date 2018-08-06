@@ -1,0 +1,10 @@
+{
+    "catalog":"bwschart_users"
+    ,"title":"Пользователи BWSChart"
+    ,"imager_folder":4
+    ,"levels":[{
+        "display": "display/level1.html"
+        ,"editable":["login","password","phone","demo_login","demo_password","expire"]
+        ,"default":["","","$date('Y-m-d H:i:s',time()+86400*30)","","","","",0,0,""]
+    }]
+}

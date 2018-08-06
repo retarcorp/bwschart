@@ -1,0 +1,209 @@
+#tabs{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color:#222;
+    padding: 0 15px;
+    height: 38px;
+    position: relative;
+    z-index: 4;
+    
+}
+#tabs ul {
+    display: block;
+    font-size: 0;
+}
+#tabs ul li{
+    display: inline-block;
+    font-size: 15px;
+}
+#tabs ul li a{
+    display: block;
+    color: #efefef;
+    padding: 0 15px;
+    padding-top: 10px;
+    padding-bottom: 4px;
+    border-bottom: 4px solid transparent;
+    transition: .3s;
+}
+#tabs ul li a:hover, #tabs ul li a.active{
+    border-bottom-color: #1e824c;  
+    color: #1e824c;
+}
+
+#container{
+    position: relative;
+    margin-top: -38px;
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+}
+#container>section{
+    display: none;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+
+
+#shop{
+    
+}
+
+#shop #filter{
+    display: block;
+    width: 25%;
+    float: left;
+    overflow: auto;
+    height: 100vh;
+    padding: 15px;
+    padding-top: 53px;
+    box-sizing: border-box;
+}
+#shop #apps{
+    display: block;
+    width: 75%;
+    padding: 15px;
+    background-color: #efefef;
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 53px;
+    overflow: auto;
+    
+}
+
+#shop #filter label{
+    display: block;
+    margin-bottom: 10px;
+}
+#shop #filter label input[type='text']{
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+#shop #filter li{
+    display: block;
+}
+
+#shop #filter h5{
+    font-size: 100%;
+}
+
+#shop #filter fieldset label{
+    margin-bottom: 0;
+}
+#shop #filter fieldset {
+    border: 0;
+    margin: 20px 0;
+}
+#app-list{
+    font-size: 0;
+}
+#app-list li{
+    display: inline-block;
+    width: 48.5%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    vertical-align: top;
+    font-size: 15px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #fff;
+}
+#app-list li:nth-child(2n){
+    margin-right: 0;
+}
+#app-list li figure img{
+    width: 20%;
+    
+    margin-right: 3%;
+    margin-bottom: 3%;
+    float: left;
+}
+#app-list li figure:after{
+    content: "";
+    clear: both;
+    display: block;
+
+}
+#app-list li figure figcaption h3{
+    color: #1e824c;
+    font-size: 120%;
+}
+#app-list li figure h5{
+    color: #aaa;
+    font-size: 12px;
+    margin-bottom: 10px;
+    
+}
+#app-list li figure .desc{
+    font-size: 13px;
+    color: #777;
+}
+#app-list li .tags{
+    font-size: 90%;
+    margin-bottom: 10px;
+    color:#555;
+}
+#app-list li .col-2{
+    font-size: 0;
+}
+#app-list li .col-2>*{
+    display: inline-block;
+    width: 67.5%;
+    vertical-align: top;
+    font-size: 15px;
+    margin-right: 5%;
+    
+}
+#app-list li .col-2>*:nth-child(2n){
+    margin-right: 0;
+    width: 27.5%;
+}
+#app-list li .chars span{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 5px;
+
+    color:#777;
+    font-size: 13px;
+    padding-left: 15px;
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    cursor: default;
+    background-position: left center;
+}
+#app-list li .chars span.installs{
+    background-image: url("../img/installs.png");
+}
+#app-list li .chars span.published{
+    background-image: url("../img/published.png");
+}
+#app-list li .chars span.size{
+    background-image: url("../img/size.png");
+}
+#app-list li .buttons{
+    text-align: right;
+}
+#app-list li .buttons input{
+    display: inline-block;
+    border: 0;
+    background: transparent;
+    color: #1e824c;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 3px;
+    outline: none;
+}
+#app-list li .buttons input:hover{
+    background-color: #efefef;
+}

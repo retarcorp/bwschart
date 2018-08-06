@@ -1,0 +1,118 @@
+.wrapper{
+    display: block;
+    display: flex;
+    flex-direction:row;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+}
+.wrapper .form{
+    display: block;
+    width: 30%;
+    min-width: 350px;
+    max-width: 450px;
+    margin: 25vh auto;
+    margin: auto auto;
+}
+.wrapper #login{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #222;
+    padding: 12px;
+    border-radius: 3px;
+    
+    
+}
+.wrapper #login label{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.wrapper #login label span{
+    color: #ccc;
+    font-size: 90%;
+    display: block;
+}
+#username, #password{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 7px 12px;
+    color: #fff;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    font-family: inherit;
+
+}
+#username:focus, #password:focus{
+    outline: 2px solid #1E824C;
+}
+#login input, #login span, #login label{
+    text-align: center;
+}
+#go{
+    display: inline-block;
+    background-color: #1E824C;
+    padding: 7px 30px;
+    color: #fff;
+    font-family: inherit;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 300;
+    outline: none;
+}
+#go:hover{
+    opacity: 0.7;
+}
+#login label.no-margin{
+    margin-bottom: 0;
+}
+#login a{
+    color:  #1E824C;
+    font-weight: 300;
+    font-size: 90%;
+}
+#login a:hover{
+    color: #177243;
+}
+#login p{
+    text-align: center;
+    padding-top: 5px;
+    border-top: 1px solid #333;
+    margin-top: 10px;
+}
+
+.logo{
+    margin-bottom: 10px;
+}
+.logo .version{
+    background-image: url(../img/core_logo.png);
+    background-size: 100% auto;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    text-align: right;
+    padding-left: 130px;
+    padding-bottom: 14px;
+    padding-top: 13px;
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 80%;
+    color: #777;
+    user-select: none;
+    cursor: default;
+}
+.logo h3{
+    display: inline-block;
+    vertical-align: bottom;
+    float: right;
+        margin-top: 21px;
+    color: #ccc;
+    font-size: 110%;
+    padding: 7px 15px;
+    background-color: #222;
+    border-radius: 3px;
+    user-select: none;
+    cursor: default;
+}

@@ -1,0 +1,365 @@
+main{
+    position: relative;
+}
+main header{
+    position: absolute;
+    top: 0;
+    width: calc(100% - 40px);
+    height:40px;
+    background-color: #222;
+    z-index: 10;
+}
+main header ul{
+    text-align: right;
+    padding: 6px 2%;
+}
+main header ul li{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+}
+main header ul li a{
+    color: #ccc;
+    display: block;
+    padding: 5px 12px;
+    border: 1px solid #ccc;
+    font-size: 85%;
+}
+main header ul li a:hover{
+    background-color: #1E824C;
+    color: #fff;
+    border-color: #1E824C;
+}
+
+
+#content{
+
+    
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+#templates>.templates{
+    padding: 20px;
+    padding-top: 60px;
+    max-height: 100vh;
+    box-sizing: border-box;
+    float: left;
+    overflow-y: auto;
+    width: 25%;
+}
+#templates .form{
+    padding: 20px;
+    padding-top: 60px;
+    background-color: #efefef;
+    height: 100vh;
+    box-sizing: border-box;
+    float: right;
+    width: 75%;
+}
+#templates .templates ul{
+    margin-bottom: 10px;
+}
+#templates .templates ul>li{
+    display: block;
+}
+#templates .templates ul>li>span{
+    display: block;
+    font-size: 90%;
+    padding: 3px 5px;
+    padding-left: 23px;
+    background-image: url('../img/theme.png');
+    background-size: auto 16px;
+    
+    background-repeat: no-repeat;
+    background-position: left center;
+    cursor: pointer;
+}
+#templates .templates ul>li:hover>span, #templates .templates ol>li>span:hover{
+    color: #1E824C;
+}
+#templates .templates ol{
+    margin-bottom: 10px;
+}
+#templates .templates ol>li{
+    display: block;
+}
+#templates .templates ol>li>span{
+    display: block;
+    font-size: 90%;
+    padding: 3px 5px;
+    padding-left: 23px;
+    background-image: url('../img/template.png');
+    background-size: auto 18px;
+    
+    background-repeat: no-repeat;
+    background-position: left center;
+    cursor: pointer;
+}
+
+#templates .templates ul>li .list{
+    display: none;
+    padding-left: 23px;
+    margin-bottom: 15px;
+}
+#templates .templates  ul>li.opened .list{
+    display: block;
+}
+#templates .templates input[type='button']{
+    border: 1px solid #1E824C;
+    color: #1E824C;
+    background-color: #fff;
+    cursor:pointer;
+    outline: none;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+#templates .templates #createFolder{
+    width: auto;
+    height: auto;
+    padding: 4px 10px;
+}
+#templates .templates input[type='button']:hover{
+    background-color:#1e824c;
+    color:#fff;
+}
+
+#editForm{
+    display: block;
+    display: none;
+}
+
+#editForm fieldset{
+    display: block;
+    border: 0;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+#editForm fieldset.head>*{
+    display: inline-block;
+    vertical-align: top;
+}
+#editForm fieldset.head #title{
+    padding: 5px 10px;
+    font-family: inherit;
+    border: 1px solid #777;
+    font-size: 80%;
+    min-width: 430px;
+    outline: none
+}
+#editForm fieldset.head input[type='button']{
+    border: 1px solid #777;
+    background: transparent;
+    font-family: inherit;
+    padding: 5px 10px;
+    color: #555;
+    font-size: 80%;
+    cursor: pointer;
+}
+#editForm fieldset.head input[type='button']:hover,#editForm fieldset.head input[type='button'].active{
+    background-color: #1e824c;
+    border-color: #1e824c;
+    color: #fff;
+}
+
+#editForm fieldset.content>div .ace_editor {
+    min-height: 150px;
+}
+
+
+
+#pageSection{
+    
+
+}
+
+#pageSection #pages{
+    width: 25%;
+    float: left;
+    padding: 20px;
+    padding-top: 60px;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: auto; 
+}
+
+#pageSection #pages li{
+    display: block;
+}
+#pageSection #pages li ul{
+    
+}
+#pageSection #pages li>div{
+    padding-left: 19px;
+    margin-bottom: 10px;
+}
+#pageSection #pages li span{
+    font-size: 80%;
+    display: block;
+    padding: 0px;
+    padding-left: 18px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-size: auto 15px;
+    background-image: url("../img/page.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+#pageSection #pages li span:hover,#pageSection #pages li.active>span{
+    color: #1e824c;
+}
+#pageSection input.addPage{
+    display: none;
+    border: 1px solid #1E824C;
+    color: #1E824C;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+
+}
+#pageSection .active>div>p>.addPage{
+    display: inline-block;
+}
+#pageSection #pages input.addPage:hover{
+    color: #fff;
+    background-color: #1e824c;
+}
+
+#pageSection .form{
+    
+    float: right;
+    width: 75%;
+    padding: 20px;
+    padding-top: 60px;
+    box-sizing: border-box;
+    background-color: #efefef;
+    height: 100vh;
+    overflow: auto;
+}
+
+#pageSection form{
+    display: none;
+}
+
+#pageSection fieldset{
+    display: block;
+    padding: 10px;
+    background-color: #fff;
+    border: 0;
+    margin-bottom: 15px;
+}
+#pageSection fieldset label span{
+    display: block;
+    font-size: 80%;
+    color: #777;
+}
+#pageSection .title label{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+#pageSection .title label input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 7px 15px;
+    outline: none;
+    font-family: inherit;
+    border: 1px solid #aaa;
+}
+
+#pageSection .head{
+    text-align: right;
+}
+#pageSection .head h3{
+        display: inline-block;
+    float: left;
+    padding: 5px;
+}
+#pageSection .head input{
+    display: inline-block;
+    vertical-align: bottom;
+    float: right;
+    border: 0;
+    background-color: transparent;
+    font-family: inherit;
+    padding: 7px 12px;
+    cursor: pointer;
+    color: #aaa;
+    margin-left: 15px;
+    border: 1px solid #aaa;
+}
+#pageSection .head input:hover{
+    background-color: #1e824c;
+    color: #fff;
+    border-color: #1e824c;
+}
+
+#pageSection .theme{
+    font-size: 0;
+}
+#pageSection .theme label{
+    display: inline-block;
+    width: 48%;
+    margin-right: 4%;
+    font-size: 15px;
+}
+#pageSection .theme label:last-child{
+    margin-right: 0;
+}
+#pageSection .theme label select{
+    display: block;
+    padding: 7px 12px;
+    font-family: inherit;
+    color: #777;
+    border-color:#777;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#pageSection .metadata label{
+    display: block;
+    margin-bottom: 10px;
+}
+#pageSection .metadata textarea{
+    font-family: inherit;
+    padding: 5px 10px;
+    width: 100%;
+    resize: none;
+    display: block;
+    font-size: 80%;
+    box-sizing: border-box;
+    resize: none;
+}
+
+#pageSection .includes>div>span{
+    display: block;
+    font-size: 90%;
+    margin-bottom: 5px;
+}
+#pageSection .includes>div{
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+#pageSection .includes div textarea{
+    display: block;
+    width:100%;
+    box-sizing: border-box;
+    padding: 6px 12px;
+    font-family: inherit;
+    resize: none;
+    outline: none;
+    height: 6em;
+}
+#pageSection .includes>div .ace_editor{
+    height: 12em;
+}

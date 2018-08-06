@@ -1,0 +1,455 @@
+
+#fileTree{
+    display: block;
+    height: 100vh;
+    width: 25%;
+    float: left;
+    overflow: auto;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    
+}
+#fileTree ul{
+    
+}
+#fileTree ul li{
+    display: block;
+}
+#fileTree ul li>span{
+    padding-left: 20px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 80%;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url('../img/file.png');
+    background-size: 15px;
+    background-position: left top;
+    background-repeat: no-repeat;
+    padding-bottom: 3px;
+}
+#fileTree ul li>span[data-ext='php'],#fileTree ul li>span[data-ext='phtml'],#fileTree ul li>span[data-ext='shtml']{
+    background-image: url('../img/file-executable.png');
+}
+#fileTree ul li>span[data-ext='js']{
+    background-image: url('../img/file-js.png');
+}
+#fileTree ul li>span[data-ext='css']{
+    background-image: url('../img/file-css.png');
+}
+#fileTree ul li>span[data-ext='html'],#fileTree ul li>span[data-ext='htm'],#fileTree ul li>span[data-ext='tpl']{
+    background-image: url('../img/file-html.png');
+}
+#fileTree ul li>span[data-ext='png'],#fileTree ul li>span[data-ext='jpeg'],#fileTree ul li>span[data-ext='jpg'],#fileTree ul li>span[data-ext='gif'],#fileTree ul li>span[data-ext='svg']{
+    background-image: url('../img/image.png');
+}
+#fileTree ul li>span[data-ext='zip']{
+    background-image: url('../img/file-zip.png');
+}
+#fileTree ul li[data-role='folder']>span{
+    background-image: url('../img/folder.png');
+}
+#fileTree ul li span:hover{
+    color: #1E824C;
+}
+#fileTree li ul{
+    padding-left: 20px;
+    
+}
+
+
+#content{
+    display: block;
+    width: 75%;
+    float: right;
+    position: relative;
+}
+
+#toolbar{
+    height: 40px;
+    box-sizing: border-box;
+    padding: 7px;
+    background-color: #222;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+ 
+}
+#toolbar>div{
+    display: inline-block;   
+    vertical-align: top;
+}
+#toolbar>div.buttons{
+    
+}
+#toolbar>div input{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    border: 0;
+    background: 0;
+    cursor: pointer;
+    border-radius:3px;
+    outline: none;
+    background-size: 80%;;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#toolbar>div input:hover{
+    background-color: #333;
+    
+}
+#toolbar #goBack{
+    background-image: url("../img/back.png")
+}
+#toolbar #goUp{
+    background-image: url("../img/up.png")
+}
+#toolbar #openEditor{
+    background-image:url("../img/editor.png");
+}
+#toolbar #path{
+    width: 60%;
+    height: 26px;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 3px 6px;
+}
+#toolbar #path li{
+    display: inline-block;
+    font-size: 80%;
+    line-height: 20px;
+    user-select: none;
+    cursor: pointer;
+    vertical-align: top;
+    
+}
+#toolbar #path li:after{
+    content: "►";
+    display: inline-block;
+    vertical-align: top;
+    line-height: 20px;
+    font-size: 60%;
+    margin-left: 3px;
+    
+}
+
+#toolbar #path li:last-child:after{
+    content: none;
+}
+#toolbar #path li:hover{
+    color:#1E824C;
+    
+}
+
+#toolbar #newFile{
+    background-image: url('../img/add-file.png');
+}
+#toolbar #newFolder{
+    background-image: url('../img/add-folder.png');
+}
+
+#spinner{
+    float: right;
+    display: none;
+}
+@keyframes spin{
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(180deg);}
+    100%{transform: rotate(360deg);}
+}
+#spinner .ring{
+    width: 20px;
+    height: 20px;
+    border: 2px solid #1E824C;
+    border-radius: 50%;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    animation: spin .7s infinite linear;
+}
+
+#elements{
+    height: 100vh;
+    overflow: auto;
+    padding-top: 50px;
+    box-sizing: border-box;
+    user-select: none;
+    border-left: 2px solid #777;
+}
+#elements.drag{
+    background-color: #a5cdb7;
+}
+#elements li{
+    display: inline-block;
+    width: 70px;
+    padding: 5px;
+    padding-top: 50px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    background-size: auto 45px;
+    background-position: center 5px;
+    background-repeat: no-repeat;
+    background-image: url('../img/folder-big-2.png');
+    cursor: pointer;
+    border-radius: 3px;
+    vertical-align: top;
+}
+#elements li:first-child:after{
+    background-image: url('../img/folder-big-hover.png');
+    content:"";
+    display: none;
+    visibility: hidden;
+}
+#elements li[data-role='folder']:hover{
+    background-image: url('../img/folder-big-hover.png');
+}
+#elements li[data-role='file']{
+    background-image: url('../img/file-big.png');
+}
+#elements li[data-role='file']:hover{
+    -background-image: url('../img/file-big-hover.png');
+    background-color: #efefef;
+}
+
+#elements ul li[data-ext='php'],#elements ul li[data-ext='phtml'],#elements ul li[data-ext='shtml']{
+    background-image: url('../img/file-big-executable.png');
+}
+#elements ul li[data-ext='js']{
+    background-image: url('../img/file-big-js.png');
+}
+#elements ul li[data-ext='css']{
+    background-image: url('../img/file-big-css.png');
+}
+#elements ul li[data-ext='html'],#elements ul li[data-ext='htm'],#elements ul li[data-ext='tpl']{
+    background-image: url('../img/file-big-html.png');
+}
+#elements ul li[data-ext='png'],#elements ul li[data-ext='jpeg'],#elements ul li[data-ext='jpg'],#elements ul li[data-ext='gif'],#elements ul li[data-ext='svg']{
+    background-image: url('../img/big-image.png');
+}
+#elements ul li[data-ext='zip']{
+    background-image: url('../img/file-big-zip.png');
+}
+
+
+
+#elements li:hover span{
+    color: #1E824C;
+}
+
+#elements li:hover{
+    -background-color: #eee;
+}
+
+#elements li>span{
+    display: block;
+    text-align: center;
+    font-size: 70%;
+    line-height: 1.2;
+    max-height: 3.6em;
+    word-wrap: break-word;
+}
+
+
+.context{
+    display: none;
+    position: fixed;
+    top: 0;
+    -right: 0;
+    
+}
+.context ul{
+    background-color: #222;
+    padding: 4px 0;
+    border-bottom: 1px solid #333;
+    
+}
+.context ul:first-child{
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    
+}
+.context ul:last-child{
+    border: 0;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.context ul li{
+    display: block;
+    position: relative;
+    font-size: 80%;
+    padding: 2px 7px;
+    background-color: #222;
+    color: #fff;
+    font-weight: 300;
+    padding-right: 30px;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+.context ul li.list{
+    padding-right: 5px;
+}
+.context ul li.list span{
+    display: block;
+    width: 100%;
+    background-image: url('../img/contextTriangle.png');
+    background-size: 15px auto;
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+.context ul li:hover{
+    color: #1E824C;
+    background-color: #333;
+}
+.context ul li>ol{
+    position: absolute;
+    display: none;
+    left: 100%;
+    top: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color:#222;
+    padding: 5px 0;
+}
+.context ul li.inactive{
+    color: #777;
+    pointer-events:none;
+}
+.context ul li:hover>ol{
+    display: block;
+}
+.context ul li ol li{
+    font-size: 100%;
+    padding-left: 10px;
+}
+
+.properties td{
+    padding: 3px 5px;
+    font-size:90%;
+}
+.properties td input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 3px 5px;
+    font-family: inherit;
+    border: 1px solid #777;
+}
+.properties td:first-child{
+    width: 20%;
+}
+.properties td:last-child{
+    width: 80%;
+}
+.properties table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+#editor{
+    display: none;
+    position: absolute;
+    z-index: 19;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+}
+
+#editor-tabs{
+    height: 30px;
+    background-color: #222;
+    overflow: hidden;
+    font-size:0;
+    
+}
+#editor-tabs li{
+    display: inline-block;
+    background-color: #ccc;
+    color: #555;
+    font-size: 12px;
+    vertical-align: top;
+    padding: 7px 10px;
+        padding-right: 5px;
+    user-select: none;
+    cursor: pointer;
+        border-left: 1px solid #bbb;
+}
+#editor-tabs li:hover{
+    background-color: #e5e5e5;
+}
+
+#editor-tabs li span{
+    font-size: inherit;
+    line-height: 17px;
+    display: inline-block;
+    vertical-align: top;
+}
+#editor-tabs li input{
+    display: inline-block;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image:url("../img/close.png");
+    opacity: 1;
+        border: 0;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    vertical-align: top;
+    margin-left: 4px;
+    margin-top: 1px;
+    outline: none;
+    cursor: pointer;
+}
+#editor-tabs li.unsaved input{
+    background-image: radial-gradient(#555 0%,#555 55%,transparent 67%, transparent);
+}
+#editor-tabs li:hover input{
+    opacity: 1;
+    background-color: transparent;
+}
+#editor-tabs li.active{
+    background-color: #fff;
+    color: #222;
+}
+#editor-elements li{
+    display: block;
+}
+
+#editor .ace_editor {
+    position: absolute;
+    height: 100vh;   
+    width: 100%;
+    top: 30px;
+}
+
+
+#editor-tabs ul li{
+    padding-left: 25px;
+    background-size: 16px auto;
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    background-image: url('../img/file.png');
+}
+#editor-tabs ul li[data-ext='php'],#editor-tabs ul li[data-ext='phtml'],#editor-tabs ul li[data-ext='shtml']{
+    background-image: url('../img/file-executable.png');
+}
+#editor-tabs ul li[data-ext='js']{
+    background-image: url('../img/file-js.png');
+}
+#editor-tabs ul li[data-ext='css']{
+    background-image: url('../img/file-css.png');
+}
+#editor-tabs ul li[data-ext='html'],#editor-tabs ul li[data-ext='htm'],#editor-tabs ul li[data-ext='tpl']{
+    background-image: url('../img/file-html.png');
+}
+#editor-tabs ul li>span[data-ext='png'],#editor-tabs ul li>span[data-ext='jpeg'],#editor-tabs ul li>span[data-ext='jpg'],#editor-tabs ul li[data-ext='gif'],#fileTeditor-tabsree ul li[data-ext='svg']{
+    background-image: url('../img/image.png');
+}

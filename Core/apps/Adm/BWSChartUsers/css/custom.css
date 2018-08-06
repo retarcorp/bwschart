@@ -1,0 +1,33 @@
+/* Put here all the styles that are for your app only. 
+It is strongly not recommended  to modify main.css. */
+.phone{
+    font-size: 12px;
+    margin: 2px 0;
+}
+
+aside #licensesCount{
+    margin-bottom: 5px;
+    border: 0;
+    background-color: #eee;
+    /*background: transparent;*/
+    padding: 5px 8px;
+    font-family: inherit;
+    outline: none;
+    color: #1e824c;
+    font-size: 90%;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    /*width: 40%;*/
+    text-align: right;
+    cursor: default;
+}
+
+.activeLicenses {
+    /*background-color: #fafafa;*/
+    background-color: #eeFFee;
+}
+
+.noActiveLicenses {
+    background-color: #FFF0F0;
+}

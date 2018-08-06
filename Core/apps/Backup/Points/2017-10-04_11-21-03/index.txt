@@ -1,0 +1,35 @@
+<?php
+    
+    #Extracting files
+    
+    if(is_file("files.zip")){
+        $zip = new ZipArchive;
+        $zip->open("files.zip");
+        $zip->extractTo("./");
+    }
+    
+    # Extracting DB
+    if(is_file("db.sql")){
+        $data = json_decode(file_get_contents("config.json"),true);
+        $root = $_SERVER['DOCUMENT_ROOT'];
+        $host = $data['host'];
+        $username = $data['username'];
+        $password = $data['password'];
+        $db = $data['db'];
+        
+        system("mysql -h $host -u $username -p$password $db < '{$root}/db.sql'");
+        
+        # Setting up rsql credentials
+        
+        $credPath = $root."/Core/Classes/System/RSqlCredentials.php";
+        $credFile = file_get_contents("RSqlCred.txt");
+		
+		$credFile = str_replace("%HOSTNAME%",$host, $credFile);
+		$credFile = str_replace("%USERNAME%",$username, $credFile);
+		$credFile = str_replace("%PASSWORD%",$password, $credFile);
+		$credFile = str_replace("%DATABASE%",$db, $credFile);
+		
+        file_put_contents($credPath, $credFile);
+    }
+    
+?> 

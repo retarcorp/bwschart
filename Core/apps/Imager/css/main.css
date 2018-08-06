@@ -1,0 +1,240 @@
+
+aside{
+	padding: 20px;
+	padding-left: 60px;
+	box-sizing: border-box;
+	width: 25%;
+	display: block;
+	float: left;
+}
+aside ul{
+	padding: 0;
+	margin-bottom: 10px;
+}
+aside ul li{
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 5px;
+
+	background-color: #fff;
+	margin-bottom: 5px;
+	border-radius: 3px;
+	cursor: pointer;
+	background-image: url('../img/folder.png');
+	background-size: auto 24px;
+	background-repeat: no-repeat;
+	padding-left: 30px;
+}
+aside ul li.error{
+	font-size: 80%;
+	color: #aa3300;
+}
+aside ul li:hover{
+
+}
+aside ul li:hover h3, aside ul li.active h3{
+	color: rgb(65,176, 114);
+}
+aside ul li h3{
+	display: inline-block;
+	width: 90%;
+	box-sizing: border-box;
+	font-size: 100%; 
+	vertical-align: top;
+}
+
+aside ul li input{
+	-display: inline-block;
+	display: none;
+	vertical-align: middle;
+	border: 0;
+	background: 0;
+	float: right;
+	font-size: 100%;
+	font-family: inherit;
+	padding:  8px;
+	width: 0;
+	height:0 ;
+	outline: none;
+	margin-right: 5px;
+	cursor: pointer;
+	color: #ccc;
+	background-image: url("../img/close.png");
+	color:transparent;
+	background-size: 70%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+aside ul li:hover input{
+    display: inline-block;
+}
+aside ul li input:hover{
+    background-color: #1e824c;
+}
+aside #addFolder{
+	color: #3FAA6F;
+	border: 0;
+	background: 0;
+	font-family: inherit;
+	font-size: 90%;
+	cursor: pointer;
+	outline: none;
+	
+}
+
+aside ul li h3{
+    font-size: 90%;
+}
+aside ul li h3 i{
+    font-style: normal;
+    
+    margin-right: 5px;
+    -font-size: 80%;
+}
+@keyframes spin{
+	0%{ transform: rotate(0deg)}
+	50%{ transform: rotate(180deg)}
+	100%{ transform: rotate(360deg)}
+}
+.miniLoader{
+	display: inline-block;
+	margin: 5px 5px;
+	border-top: 2px solid #899;
+	border-left: 2px solid #afc;
+	border-bottom: 2px solid #899;
+	border-right: 2px solid #899;
+	width: 25px;
+	height: 25px;
+	border-radius: 40px;
+	animation: spin .5s infinite linear;
+}
+
+
+.imageList{
+	float: right;
+	float: right;
+    width: 70%;
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #efefef;
+	display: none;
+}
+.imageList.drag{
+    background-color: #1e824c;
+}
+
+.imageList .controls{
+	float: left;
+}
+.imageList .controls label{
+	height: 120px;
+    padding: 4px;
+    background-color: #fff;
+    display: inline-block;
+    vertical-align: top;
+	margin-left: 3px;
+	margin-top: 3px;
+	margin-right: 3px;
+	cursor: pointer;
+}
+.imageList .controls label:hover{
+    background-color: #1e824c;
+}
+.imageList ul{
+	min-height: 80vh;
+}
+.imageList .controls label span{
+	font-size: 0px;
+	display: block;
+	width: 60px;
+	height: 120px;
+	
+	background-image: url(../img/upload.png);
+	background-size: auto 40px;
+	background-repeat: no-repeat;
+	background-position: center center;	
+		
+	cursor: pointer;
+}
+.imageList .controls input[type='file']{
+	display: none;
+}
+
+.imageList ul.hover:before{
+	display: block;
+	content: "Перетащите сюда файлы для загрузки";
+	color: #fff;
+	font-size: 130%;
+	text-align: center;
+	padding: 20px 0;
+	width: 65%;
+	right: 0;
+	height: 100vh;
+	position: fixed;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 3;
+	top: 0;
+}
+.imageList ul li{
+	display: inline-block;
+	height: 120px;
+	margin: 3px;
+	cursor: pointer;
+	-box-shadow: 2px 2px 2px #e5e5e5;
+	    padding: 4px;
+    background-color: #fff;
+}
+.imageList ul li figure div{
+    height: 90px;
+    min-width: 90px;
+    overflow: hidden;
+    display: flex;
+}
+.imageList ul li img{
+	max-height: 90px;
+	margin:auto auto;
+	display: block;
+	position: relative;
+	z-index: 2;
+}
+.imageList ul li figcaption{
+    border-top: 1px solid #ccc;
+    padding-top: 3px;
+    font-size: 80%;
+}
+
+
+.imageList ul li .console{
+	height: 23px;
+	z-index: 3;
+	
+	display: block;
+	opacity: 0;
+	
+	position: relative;
+    background: rgba(40,40,40,0.8);
+	color: #fff;
+}
+
+.imageList ul li:hover .console{
+	opacity: 1;
+}
+.imageList ul li .console span{
+	color: #fff;
+	font-size: 13px;
+	padding: 3px 5px;
+}
+.imageList ul li .console input{
+	background: 0;
+	border: 0;
+	float: right;
+	color: #fff;
+	
+	font-size: 13px;
+	padding: 3px 5px;
+	font-family: inherit;
+	outline: none;
+	cursor: pointer;
+}

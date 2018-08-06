@@ -1,0 +1,300 @@
+@font-face{
+    font-family: Roboto;
+    src: local("Roboto"), url(/Core/css/roboto.ttf);
+}
+@font-face{
+    font-family: Roboto;
+    font-weight: 300;
+    src: local("Roboto Light"), url(/Core/css/robotoLight.ttf);
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    color: #222;
+    font-family: Roboto, Open Sans, Tahoma, Arial, Calibri, sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+#navPanel{
+    position: fixed;
+     z-index: 4;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 100%;
+    background-color: #222;
+    box-sizing: border-box;
+    
+    
+}
+#navPanel::-webkit-scrollbar{
+    display: none;
+}
+#navPanel nav{
+    display: block;
+}
+#navPanel nav ul>li{
+    -border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    background-image: linear-gradient(to left,transparent 0%,#444 50% ,transparent 100% );
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+#navPanel nav ul>li:first-child{
+    margin-top: 5px;
+}
+#navPanel nav ul>li ol li{
+    position: relative;
+   
+}
+#navPanel nav ul>li ol li a{
+    display: block;
+    position:relative;
+    
+    padding: 7px;
+    padding-left: 40px;
+    background-color: #222;
+    background-size: 22px;
+    background-position: 7px center;
+    background-repeat: no-repeat;
+    
+    color: #ccc;
+    
+    font-weight: 300;
+    line-height: 1.1;
+    
+    font-size: 0;
+    padding-right: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+   
+}
+#navPanel.hover nav ul>li ol li a,#navPanel nav ul>li ol li a:hover{
+     font-size: 85%;
+    width: 180px;
+    padding-right: 10px;
+}
+#navPanel nav ul>li ol li a:hover{
+    -background-color: #333;
+}
+
+main{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 40px;
+}
+
+main>.content{
+    padding: 15px;
+}
+
+
+.Scrollable::-webkit-scrollbar{
+    width: 5px;
+}
+.Scrollable::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+.Scrollable::-webkit-scrollbar-thumb{
+    border-radius: 3px;
+    background-color: #222;
+}
+
+.Dialog{
+    position: fixed;
+    display: block;
+    z-index: 300;
+    top: 0;
+    left: 0;
+    background-color:rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+}
+.Dialog>.wrap{
+    width: 35%;
+    min-width: 300px;
+    margin: 20px auto;
+    background-color: #222;
+    border-radius: 3px;
+    padding: 7px;
+}
+.Dialog>.wrap>.title{
+    color: #ccc;
+    font-size: 90%;
+    padding: 0px 0px;
+    margin-bottom: 5px;
+    cursor: default;
+    user-select: none
+}
+.Dialog>.wrap>.content{
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 5px 7px;
+    font-size: 90%;
+    
+}
+.Dialog .DialogButtons{
+    display: block;
+    text-align: right;
+    padding-top: 5px;
+    clear: both;
+}
+.Dialog .DialogButtons input[type='button']{
+    display: inline-block;
+    border: 0;
+    font-family: inherit;
+    background: none;
+    padding: 5px 7px;
+    outline: none;
+    color: #1E824C;
+    border-radius: 3px;
+}
+.Dialog .DialogButtons input[type='button']:hover{
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.PromptDialog input[type='text']{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 8px;
+    outline: none;
+    font-family: inherit;
+    border: 1px solid #888;
+    margin: 5px 0;
+}
+
+.ProcessDialog{
+    display: flex;
+    flex-direction: column;
+}
+.ProcessDialog .wrap{
+    margin: auto auto;
+}
+.ProcessDialog .c{
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    padding: 10px 0;
+}
+
+@keyframes DialogSpin{
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(180deg);}
+    100%{transform: rotate(360deg);}
+}
+.ProcessDialog #DialogSpinner i{
+    width: 30px;
+    height: 30px;
+    
+    border: 2px solid #1E824C;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-radius: 50%;
+    float: left;
+    margin:  auto 10px;
+    animation: DialogSpin .7s infinite linear;
+}
+.ProcessDialog .c .cc{
+    margin: auto 10px;
+}
+.MultipleChoiceDialog .choices ul{
+    max-height: 60vh;
+    overflow: auto;
+}
+.MultipleChoiceDialog .choices li{
+    display: block;
+}
+.MultipleChoiceDialog .choices li label{
+    display: block;
+    padding: 5px 7px;
+}
+.MultipleChoiceDialog .choices li label:hover{
+    background-color: #e5e5e5;
+}
+.MultipleChoiceDialog .choices li label span{
+    display: inline-block;
+    vertical-align: top;
+    line-height: 18px;
+    text-indent: 8px;
+}
+.MultipleChoiceDialog .choices li label input[type='checkbox']{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    vertical-align: top;
+    height: 0;
+}
+.MultipleChoiceDialog .choices li label input[type='checkbox']:before{
+    content:"";
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #222;
+    border-radius: 3px;
+}
+.MultipleChoiceDialog .choices li label input[type='checkbox']:checked:before{
+    content: "✔";
+}
+
+
+.ContextMenu{
+    position: fixed;
+    z-index: 5;
+    right: 0;
+    bottom: 0;
+    max-width: 160px;
+    overflow: auto;
+    
+}
+.ContextMenu::-webkit-scrollbar{
+    background-color: #222;
+}
+.ContextMenu::-webkit-scrollbar-thumb{
+    background-color: #efefef;
+}
+.ContextMenu .wrap{
+    background-color: #222;
+    border-radius: 3px;
+}
+.ContextMenu .wrap li:first-child{
+    padding-top: 3px;
+}
+.ContextMenu .wrap li:last-child{
+    padding-bottom: 3px;
+}
+.ContextMenu .wrap li{
+    display: block;
+    
+    padding: 0px 8px;
+    cursor:pointer;
+}
+.ContextMenu .wrap li span{
+    color: #ccc;
+    font-size: 80%;
+    white-space: pre;
+}
+.ContextMenu .wrap li:hover span{
+    color: #1e824c;
+}
+
+.ContextMenu li.hidden{
+    display: none;
+}
+.ContextMenu li.disabled span,.ContextMenu li.disabled:hover span{
+    color: #888;
+    cursor: default;
+}

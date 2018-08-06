@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="formBugs.css">
+    <link rel="stylesheet" href="chosen/chosen.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Bags report</title>
+</head>
+<body>
+    <div id="wrapper">
+        <form action="" class="report__form">
+            <header class="form__header">Bugs report</header>
+            <div class="form__content">
+                <div class="form__field">
+                    <label class="form__label" for="time-frame">Таймфрейм: </label>
+                    <select class="form__select" id="time-frame">
+                        <option value="none">Не выбран</option>
+                        <option value="M1">M1</option>
+                        <option value="M5">M5</option>
+                        <option value="M10">M10</option>
+                        <option value="M15">M15</option>
+                        <option value="M30">M30</option>
+                        <option value="H1">H1</option>
+                        <option value="H4">H4</option>
+                        <option value="D1">D1</option>
+                    </select>
+                </div>
+                <div class="form__field">
+                    <label class="form__label" for="tools">Инструменты: </label>
+                    <select class="form__select" id="tools">
+                        <option value="none">Не выбран</option>
+                        <option value="6E">6E</option>
+                        <option value="6B">6B</option>
+                        <option value="6J">6J</option>
+                        <option value="6S">6S</option>
+                        <option value="6A">6A</option>
+                        <option value="6N">6N</option>
+                        <option value="6C">6C</option>
+                        <option value="GC">GC</option>
+                        <option value="CL">CL</option>
+                    </select>
+                </div>
+                <div class="form__field">
+                    <label class="form__label" for="graphic__type">Тип графика: </label>
+                    <select class="form__select" id="graphic__type">
+                        <option value="none">Не выбран</option>
+                        <option value="FOOTPRINT">FOOTPRINT</option>
+                        <option value="DELTA">DELTA</option>
+                        <option value="ORDER TAPE">ORDER TAPE</option>
+                    </select>
+                </div>
+                <div class="form__field">
+                    <label class="form__label" for="delta">Дельта: </label>
+                    <select class="form__select" id="delta">
+                        <option value="none">Не выбран</option>
+                        <option value="100">100</option>
+                        <option value="300">300</option>
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                    </select>
+                </div>
+                <div class="form__field field__textarea">
+                    <label class="form__label" for="report__description">Описание репорта: </label>
+                    <textarea id="report__description" class="form__textarea">Описание проблемы
+
+
+
+Пути воспроизведения
+
+
+
+Ожидаемое поведение
+                    </textarea>
+                </div>
+                <div class="form__field field__textarea">
+                    <label class="form__label" for="screenShot">Ссылка на скриншот: </label>
+                    <textarea id="screenShot" class="form__textarea"></textarea>
+                </div>
+            </div>
+            <input type="submit" name="" id="sendForm" value="Отправить">
+        </form>
+    </div>
+
+    <script src="chosen/chosen.jquery.min.js"></script>
+
+    <script>
+         $("#time-frame").chosen({
+             no_results_text: "Oops, nothing found!",
+             width: "100%"});
+         $("#tools").chosen({
+             no_results_text: "Oops, nothing found!",
+             width: "100%"});
+         $("#graphic__type").chosen({
+             no_results_text: "Oops, nothing found!",
+             width: "100%"});
+         $("#delta").chosen({
+             no_results_text: "Oops, nothing found!",
+             width: "100%"});
+    </script>
+</body>
+</html>

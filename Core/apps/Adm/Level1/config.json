@@ -1,0 +1,10 @@
+{
+    "catalog":"goods_1"
+    ,"title":"Товары уровня 1"
+    ,"imager_folder":4
+    ,"levels":[{
+        "display": "display/level1.html"
+        ,"editable":["image","title","description","content","amount","price"]
+        ,"default":["Новый товар","Описание товара пока пусто","0.0","0","0","","$date('Y-m-d H:i:s')",""]
+    }]
+}

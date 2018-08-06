@@ -1,0 +1,138 @@
+main{
+    clear: both;
+}
+#queries{
+    display: block;
+    float: left;
+    width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#result{
+    float: right;
+    display: block;
+    width: 70%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#terminal{
+    background-color: #444;
+    padding: 9px;
+    display: block;
+}
+#terminal .form{
+    display: block;
+
+    background-color: #fff;
+}
+#terminal .form textarea{
+    display: block;
+    font-family: monospace;
+    border: 0;
+    width: 100%;
+    line-height: 1.2;
+    font-size: 80%;
+    height: 12em;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #aaa;
+    outline: none;
+    resize: none;
+    tab-size: 4;
+}
+#terminal .form label{
+
+    display: block;
+}
+#terminal .form #sendQuery{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    color: #1e824c;
+    border: 0;
+    background: 0;
+    padding: 7px 10px;
+    font-size: 100%;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+}
+#terminal .form #sendQuery:hover{
+    background-color:#efefef;
+}
+#result .status{
+    margin-bottom: 10px;
+    font-size: 90%;
+}
+#result #status .info{
+   color: #1e824c;
+}
+#result #status .error{
+    color: #c0392b;
+}
+#result table{
+    border-collapse: collapse;
+}
+#result td{
+    padding: 3px 5px;
+    border: 1px solid #ccc;
+    color: #222;
+    font-size: 80%;
+    font-family: monospace;
+}
+#result thead td{
+    background-color: #777;
+    color: #fff;
+    border: 0;
+}
+#queryResult{
+    width: 100%;
+}
+#queryResult xmp{
+    font-size: 100%;
+    line-height: 1.2;
+    max-width: 250px;
+    word-wrap: break-word;
+    max-height: 8.4em;
+    white-space: normal;
+    overflow: hidden;
+}
+#queryResult tr:hover td{
+    background-color: #e5e5e5;
+}
+#queryResult .full xmp{
+    max-height: 0;
+}
+
+#list{
+    display: block;
+    margin-top: 15px;
+    background-color: #444;
+    padding: 9px;
+}
+
+#list ul{
+    background-color: #fff;
+    overflow: auto;
+}
+
+#list ul li{
+    display: block;
+    font-size: 80%;
+    white-space: pre-line;
+    margin-bottom: 5px;
+    background-color: #e5e5e5;
+    padding: 3px 5px;
+    cursor: pointer;
+    user-select: none;
+}
+#list li xmp{
+    white-space: pre-line;
+}
+#list ul li:hover{
+    background-color: #ccc;
+}
+
+

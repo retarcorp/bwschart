@@ -1,0 +1,181 @@
+/* It is strongly not recommended  to modify main.css - for 
+inserting style changes to your particular app, use custom.css */
+
+aside{
+    height: 100vh;
+    box-sizing:border-box;
+    overflow: auto;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 25%;
+    float: left;
+    position: relative; /*add*/
+}
+aside ul li{
+    display: block;
+    font-size: 90%;
+
+    cursor: pointer;
+    padding: 5px;
+
+    
+}
+aside ul li.rcore-context-open{
+    background-color: #f5f5f5;
+}
+aside ul li.active{
+    background-color:#e5e5e5;
+}
+aside ul li:hover{
+    background-color: #e5e5e5;
+}
+aside #createItem{
+    margin-bottom: 5px;
+    border: 0;
+    background: transparent;
+    padding: 5px 8px;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    color: #1e824c;
+}
+aside #createItem:hover{
+    background-color: #eee;
+}
+
+section{
+    width: 75%;
+    float: right;
+    height: 100vh;
+    overflow: auto;
+    background-color: #e5e5e5;
+    padding: 20px;
+    box-sizing: border-box;
+    
+}
+section>form{
+    display: block;
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+}
+
+section>form fieldset{
+    display: block;
+    border: 0;
+    padding-top: 20px;
+}
+section>form div.tools{
+    position: fixed;
+    width: calc(75% - 30px);
+    right: 0;
+    top:0;
+    z-index: 4;
+    background-color: #222;
+    box-sizing: border-box;
+    padding: 3px 15px;
+    text-align: right;
+}
+section>form div.tools input{
+    border: 0;
+    background-color: transparent;
+    color: #1e824c;
+    font-family: inherit;
+    cursor: pointer;
+    font-size: 90%;
+    padding: 5px 10px;
+    border-radius: 3px;
+    outline: none;
+}
+section>form div.tools input:hover{
+    background-color: #444;
+}
+#save{
+    background-image: url('../img/save.png');
+        padding-left: 33px;
+    background-position: 3px center;
+    background-size: 24px auto;
+    background-repeat: no-repeat;
+}
+
+section>form:after{
+    clear: both;
+    content: "";
+    display: block;
+}
+section>form label{
+    display: block;
+    margin-bottom: 10px;
+}
+section>form label span{
+    display: block;
+    font-size: 90%;
+    margin-bottom: 3px;
+}
+section>form label[data-type='bool'] span{
+    display: inline-block;
+    width: auto;
+    vertical-align: top;
+}
+section>form label[data-type='image']{
+    position: relative;
+}
+section>form label[data-type='image']>img{
+    display: none;
+    position: absolute;
+    max-width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    border: 5px solid #eee;
+    background-color: #eee;
+}
+section>form label[data-type='image'] input{
+    border: 1px solid #1e824c;
+    background: transparent;
+    font-family: inherit;
+    padding: 6px 13px;
+    color: #1e824c;
+}
+
+section>form label[data-type='image']:hover img{
+    display: block;
+}
+section>form label input[type='text']{
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    padding: 7px 15px;
+    box-sizing: border-box;
+    outline: none;
+    background-color: #eee;
+    border: 0;
+    box-shadow: 2px 2px 3px #ccc inset;
+}
+section>form label xmp{
+    display: none;
+}
+section>form label textarea{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 7px 15px;
+    font-family: inherit;
+    box-shadow: 2px 2px 3px #ccc inset;
+    background-color: #eee;
+    border: 0;
+    outline: none;
+    resize: none;
+}
+
+section>form label input[type='number']{
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    padding: 7px 15px;
+    box-sizing: border-box;
+    outline: none;
+    background-color: #eee;
+    border: 0;
+    box-shadow: 2px 2px 3px #ccc inset;
+}

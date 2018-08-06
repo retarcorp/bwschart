@@ -1,0 +1,123 @@
+#toolbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - 40px);
+    background-color: #222;
+    height: 40px;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    text-align: right;
+}
+#toolbar label{
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 90%;
+}
+#toolbar label input[type='button']{
+    border: 1px solid #777;
+    background: transparent;
+    padding: 6px 10px;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+    color: #ccc;
+}
+#toolbar label input[type='button']:hover{
+    background-color: #444;
+}
+
+#toolbar label span{
+    color: #fff;
+}
+#toolbar select{
+    background-color:#222;
+    color: #fff;
+    outline: none;
+    padding: 5px 7px;
+    font-family: inherit;
+}
+#content table{
+    margin-top: 40px;
+    width: 100%;
+    border-collapse: collapse;
+}
+#content thead td:last-child{
+        width: 70%;
+}
+#content table thead{
+    position: relative;
+}
+#content table td{
+    padding: 3px;
+    font-size: 90%;
+    
+}
+#content table thead td{
+    background-color: #222;
+    color: #fff;
+}
+#content tbody td{
+    font-size: 80%;
+    padding: 1px 5px;
+    cursor: default;
+}
+#content tbody tr:hover td{
+    background-color: #e5e5e5;
+}
+#content tbody .status i{
+    width: 16px;
+    height: 16px;
+    
+    display: block;
+    background-image: url('../img/error.png');
+    background-size: 100%;
+    background-position: center;
+    background-repeat:no-repeat;
+}
+
+#content tbody .status i.status-0{
+    background-image: url('../img/info.png');
+}
+#content tbody .status i.status-1{
+    background-image: url('../img/warn.png');
+}
+
+#spinner{
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+@keyframes spin{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+#spinner i{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 2px solid  #1e824c;
+    border-bottom-color:transparent;
+    border-left-color: transparent;
+    border-radius: 50px;
+    animation: spin .7s infinite linear;
+}
+
+#list.error .s-1, #list.error .s-0{
+    display: none;
+}
+#list.safety_warn .s-1, #list.safety_warn .s-0{
+    display: none!important;
+}
+#list.warn .s-0{
+    display: none!important;
+}
+
+#list .s-1 td{
+    color: #22f;
+}
+#list .s-2 td{
+    color: #c0392b;
+}
